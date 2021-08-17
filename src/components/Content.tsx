@@ -32,7 +32,6 @@ export function Content({ selectedGenreId }: ContentProps) {
     {} as GenreResponseProps
   );
 
-  // Complete aqui
   useEffect(() => {
     api
       .get<MovieProps[]>(`movies/?Genre_id=${selectedGenreId}`)
@@ -71,4 +70,3 @@ export function Content({ selectedGenreId }: ContentProps) {
     </div>
   );
 }
-

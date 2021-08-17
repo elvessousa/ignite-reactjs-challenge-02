@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from '../components/Button';
 import { api } from '../services/api';
@@ -25,9 +25,9 @@ export function SideBar({ selectedGenreId, setSelectedGenreId }: SideBarProps) {
     });
   }, []);
 
-  function handleClickButton(id: number) {
+  const handleClickButton = useCallback((id: number) => {
     setSelectedGenreId(id);
-  }
+  }, [selectedGenreId]);
 
   return (
     <nav className="sidebar">
